@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIJAY RAWAT - Cricket Analyst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1626005569286-118226642330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(15, 15, 35, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 2px solid #ff5722;
+            animation: containerGlow 3s infinite alternate;
+        }
+        
+        @keyframes containerGlow {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 87, 34, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(255, 87, 34, 0.8);
+            }
+        }
+        
+        .logo-container {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff5722;
+            box-shadow: 0 0 25px rgba(255, 87, 34, 0.7);
+            transition: transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 25px rgba(255, 87, 34, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(255, 87, 34, 0.9);
+            }
+            100% {
+                box-shadow: 0 0 25px rgba(255, 87, 34, 0.7);
+            }
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            color: #ff5722;
+            letter-spacing: 1px;
+        }
+        
+        .cricket-icon {
+            font-size: 1.8rem;
+            margin-left: 10px;
+            color: #ff9800;
+        }
+        
+        .subscriber-count {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: #ff9800;
+            font-weight: bold;
+        }
+        
+        .owner {
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin: 15px 0;
+            /* border: 1px solid #ff5722; */
+            font-size: 1.1rem;
+            color: #ff9800;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .original-link {
+            /* background: rgba(255, 87, 34, 0.2); */
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            /* border: 1px solid #ff5722; */
+            font-size: 1.1rem;
+            color: #ff9800;
+            line-height: 1.6;
+        }
+        
+        .original-link a {
+            color: #ff9800;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .original-link a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        .accuracy {
+            /* background: rgba(255, 87, 34, 0.2); */
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            /* border: 1px solid #ff5722; */
+            font-size: 1.2rem;
+            color: #ff9800;
+            line-height: 1.6;
+            font-weight: bold;
+        }
+        
+        .trophy {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #ffd700;
+        }
+        
+        .guarantee {
+            /* background: rgba(255, 87, 34, 0.2); */
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            /* border: 1px solid #ff5722; */
+            font-size: 1.1rem;
+            color: #ff9800;
+            line-height: 1.6;
+        }
+        
+        .guarantee a {
+            color: #ff9800;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .guarantee a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        .fairpunt-link {
+            /* background: rgba(255, 87, 34, 0.2); */
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            /* border: 1px solid #ff5722; */
+            font-size: 1.1rem;
+            color: #ff9800;
+            line-height: 1.6;
+        }
+        
+        .fairpunt-link a {
+            color: #ff9800;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .fairpunt-link a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .feature {
+            /* background: rgba(255, 87, 34, 0.1); */
+            padding: 12px 18px;
+            border-radius: 8px;
+            /* border: 1px solid rgba(255, 87, 34, 0.3); */
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .feature i {
+            color: #ff9800;
+        }
+        
+        .timer-container {
+            /* background: rgba(0, 0, 0, 0.7); */
+            padding: 20px 40px;
+            border-radius: 10px;
+            margin: 25px 0;
+            /* border: 2px solid #ff5722;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); */
+        }
+        
+        .timer {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff9800;
+            font-family: 'Digital', Arial, sans-serif;
+            text-shadow: 0 0 10px rgba(255, 152, 0, 0.6);
+        }
+        
+        .timer-label {
+            font-size: 1.1rem;
+            margin-top: 5px;
+            color: #ddd;
+            letter-spacing: 1px;
+        }
+        
+        .btn-container {
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+            animation-delay: 0.3s;
+            min-width: 250px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+            color: white;
+            box-shadow: 0 5px 20px rgba(255, 87, 34, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #ff9800;
+            border: 2px solid #ff9800;
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 87, 34, 0.7);
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: #ff9800;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #ff5722;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .accuracy {
+                font-size: 1.1rem;
+            }
+            
+            .timer {
+                font-size: 2.5rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                min-width: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .owner {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+            
+            .original-link, .accuracy, .guarantee, .fairpunt-link {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+            
+            .timer-container {
+                padding: 15px 25px;
+            }
+            
+            .timer {
+                font-size: 2rem;
+            }
+            
+            .btn-container {
+                flex-direction: column;
+                width: 100%;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Vijay Rawat Logo" class="logo">
+        </div>
+        
+        <h1>VIJAY RAWAT (Cricket Analyst)🏏</h1>
+        <p class="subscriber-count">35,917 subscribers</p>
+        
+        <div class="owner">Channel ka Malik @Vijayrawat001 ✅</div>
+        
+        <div class="btn-container">
+            <a href="https://t.me/+IPd49FO-3pg4MDQ1" class="btn btn-primary"><i class="fab fa-telegram"></i> JOIN [VIJAY RAWAT (Cricket Analyst)🏏] CHANNEL</a>
+        </div>
+
+        <div class="timer-container">
+            <div class="timer" id="countdown">60</div>
+            <div class="timer-label">SECONDS REMAINING</div>
+        </div>
+    </div>
+    
+    <script>
+        // Countdown timer with urgency effects
+        let timeLeft = 60;
+        const countdown = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdown.textContent = timeLeft;
+            
+            // Change color when time is running out
+            if (timeLeft <= 10) {
+                countdown.style.color = "#ff1744";
+                countdown.style.textShadow = "0 0 15px rgba(255, 23, 68, 0.8)";
+                document.querySelector('.timer-container').style.borderColor = "#ff1744";
+                document.querySelector('.timer-container').style.boxShadow = "0 0 20px rgba(255, 23, 68, 0.4)";
+            }
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                countdown.textContent = "OFFER ENDED!";
+                document.querySelector('.timer-label').textContent = "JOIN NOW BEFORE NEXT UPDATE";
+            }
+        }, 1000);
+        
+        // Button animation with staggered delay
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach((btn, index) => {
+            btn.style.animationDelay = `${0.2 + (index * 0.3)}s`;
+            
+            // Add click animation
+            btn.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1.03)';
+                }, 200);
+            });
+        });
+        
+        // Add pulse effect to logo periodically
+        const logo = document.querySelector('.logo');
+        setInterval(() => {
+            logo.style.transform = 'scale(1.05)';
+            logo.style.boxShadow = '0 0 35px rgba(255, 87, 34, 0.9)';
+            setTimeout(() => {
+                logo.style.transform = 'scale(1)';
+                logo.style.boxShadow = '0 0 25px rgba(255, 87, 34, 0.7)';
+            }, 1000);
+        }, 5000);
+        
+        // Add floating animation to features
+        const features = document.querySelectorAll('.feature');
+        features.forEach((feature, index) => {
+            feature.style.animation = `fadeInUp 0.6s forwards`;
+            feature.style.animationDelay = `${0.5 + (index * 0.2)}s`;
+            feature.style.opacity = '0';
+        });
+    </script>
+</body>
+</html>
